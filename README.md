@@ -1,2 +1,3 @@
-# touchypi
-Pi 1 + PiTFT Projects
+# TouchyPi
+
+A collection of projects running on the Adafruit PiTFT 2.8" screen.
