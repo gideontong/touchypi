@@ -9,7 +9,7 @@ from time import sleep
 
 os.putenv('SDL_FBDEV', '/dev/fb1')
 pygame.init()
-lcd = pygame.display.set_mode((320, 240))
+lcd = pygame.display.set_mode((240, 320))
 lcd.fill((255,0,0))
 pygame.display.update()
 sleep(1)
