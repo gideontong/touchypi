@@ -16,10 +16,10 @@ URL = 'https://www.kcscout.net/TransSuite.VCS.CameraSnapshots/K070WBC-01.jpg'
 if RUNNING_ON_PI:
     print("Running on pi")
     os.environ['SDL_FBDEV'] = '/dev/fb1'
-    pygame.init()
+
+pygame.init()
 
 if __name__ == '__main__':
-    pygame.init()
     pygame.mouse.set_visible(False)
     lcd = pygame.display.set_mode((240, 320))
     lcd.fill((0,0,0))
