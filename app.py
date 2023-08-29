@@ -14,7 +14,7 @@ if __name__ == '__main__':
     lcd = pygame.display.set_mode((240, 320))
     lcd.fill((255,0,0))
     pygame.display.update()
-    sleep(1)
+    sleep(5)
 
     lcd.fill((0,0,0))
     pygame.display.update()
