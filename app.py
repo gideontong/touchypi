@@ -14,6 +14,7 @@ from requests import request
 URL = 'https://www.kcscout.net/TransSuite.VCS.CameraSnapshots/K070WBC-01.jpg'
 
 if RUNNING_ON_PI:
+    print("Running on pi")
     os.putenv('SDL_FBDEV', '/dev/fb1')
 
 if __name__ == '__main__':
