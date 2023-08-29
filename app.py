@@ -28,4 +28,4 @@ if __name__ == '__main__':
     image_surface = pygame.transform.scale(image_surface, (200, 113))
     lcd.blit(image_surface, (20, 190))
     pygame.display.update()
-    sleep(3)
+    sleep(10)
