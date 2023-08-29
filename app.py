@@ -17,12 +17,11 @@ if RUNNING_ON_PI:
     print("Running on pi")
     os.environ['SDL_FBDEV'] = '/dev/fb1'
 
-pygame.init()
-print(pygame.display.Info())
 
 if __name__ == '__main__':
-    pygame.mouse.set_visible(False)
+    pygame.init()
     lcd = pygame.display.set_mode((240, 320))
+    pygame.mouse.set_visible(False)
     lcd.fill((0,0,0))
     r = request('GET', URL)
     img = io.BytesIO(r.content)
