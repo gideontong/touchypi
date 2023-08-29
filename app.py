@@ -27,7 +27,7 @@ if RUNNING_ON_PI:
 if __name__ == '__main__':
     pygame.init()
     lcd = pygame.display.set_mode((240, 320))
-    for i in range(50):
+    for i in range(300):
         lcd.fill((0,0,0))
         cap = cv2.VideoCapture(URL)
         ret, frame = cap.read()
