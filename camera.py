@@ -30,8 +30,8 @@ if __name__ == '__main__':
     lcd.fill((0,0,0))
     cap = cv2.VideoCapture(URL)
     ret, frame = cap.read()
-    print(frame.shape)
-    image_surface = pygame.image.frombuffer(frame.tobytes(), frame.shape[1::-1], 'RGB')
+    frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+    image_surface = pygame.image.frombytes(frame.tobytes(), frame.shape[1::-1], 'RGB')
     image_surface = pygame.transform.scale(image_surface, (200, 113))
     lcd.blit(image_surface, (20, 190))
     
@@ -42,4 +42,4 @@ if __name__ == '__main__':
     pygame.display.update()
     pygame.mouse.set_visible(False)
     pygame.display.update()
-    sleep(5)
+    sleep(10)
