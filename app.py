@@ -18,6 +18,7 @@ if RUNNING_ON_PI:
     os.environ['SDL_FBDEV'] = '/dev/fb1'
 
 pygame.init()
+print(pygame.display.Info())
 
 if __name__ == '__main__':
     pygame.mouse.set_visible(False)
