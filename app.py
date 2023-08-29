@@ -21,7 +21,6 @@ if RUNNING_ON_PI:
 if __name__ == '__main__':
     pygame.init()
     lcd = pygame.display.set_mode((240, 320))
-    pygame.mouse.set_visible(False)
     lcd.fill((0,0,0))
     r = request('GET', URL)
     img = io.BytesIO(r.content)
@@ -29,5 +28,7 @@ if __name__ == '__main__':
     image_surface = pygame.image.load(img)
     image_surface = pygame.transform.scale(image_surface, (200, 113))
     lcd.blit(image_surface, (20, 190))
+    pygame.display.update()
+    pygame.mouse.set_visible(False)
     pygame.display.update()
     sleep(10)
