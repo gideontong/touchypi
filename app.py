@@ -1,18 +1,13 @@
+import json
+import os
+from time import sleep
+
+import cv2
 import pygame
 import pygame.image
 import pygame.transform
-import os
-import io
 
-
-from time import sleep
-
-from touchypi.const import RUNNING_ON_PI
-
-from requests import request
-
-import json
-import cv2
+from touchypi.const import EMULATOR_SCALE, RUNNING_ON_PI
 
 with open('secrets.json') as fp:
     secrets = json.load(fp)
@@ -25,7 +20,6 @@ if RUNNING_ON_PI:
     os.environ['SDL_FBDEV'] = '/dev/fb1'
 
 
-EMULATOR_SCALE = 3
 RES = (240, 320)
 TARGET_RES = RES
 SCALE = 1
