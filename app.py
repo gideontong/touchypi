@@ -12,8 +12,8 @@ from touchypi.const import EMULATOR_SCALE, RUNNING_ON_PI
 with open('secrets.json') as fp:
     secrets = json.load(fp)
 
-# URL = f'rtsp://{secrets["username"]}:{secrets["password"]}@{secrets["ip"]}/stream2'
-URL = f'rtsp://localhost/fpv.mkv'
+URL = f'rtsp://{secrets["username"]}:{secrets["password"]}@{secrets["ip"]}/stream2'
+# URL = f'rtsp://localhost/fpv.mkv'
 
 if RUNNING_ON_PI:
     print("Pi detected, setting display out to framebuffer")
