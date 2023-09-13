@@ -1,8 +1,6 @@
 import json
 import os
-from time import sleep
 
-import cv2
 import pygame
 import pygame.image
 import pygame.transform
@@ -40,6 +38,7 @@ if __name__ == '__main__':
     pygame.init()
     lcd = pygame.display.set_mode(RES)
     for i in range(1000):
+        events = pygame.event.get()
         buffer = pygame.Surface(TARGET_RES)
         buffer.fill((0,0,0))
         
@@ -50,6 +49,10 @@ if __name__ == '__main__':
         if not RUNNING_ON_PI:
             buffer = pygame.transform.scale_by(buffer, SCALE)
         lcd.blit(buffer, (0, 0))
+        
+        for event in events:
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                logger.debug(event)
         pygame.display.update()
         pygame.mouse.set_visible(False)
         pygame.display.update()
