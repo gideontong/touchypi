@@ -1,3 +1,4 @@
+import json
 import os
 
 import pygame
@@ -14,6 +15,12 @@ console_handler.setFormatter(logging.Formatter(log_format))
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 logger.addHandler(console_handler)
+
+with open('secrets.json') as fp:
+    secrets = json.load(fp)
+
+URL = f'rtsp://{secrets["username"]}:{secrets["password"]}@{secrets["ip"]}/stream2'
+# URL = f'rtsp://localhost/fpv.mkv'
 
 if RUNNING_ON_PI:
     logger.info("Pi detected, setting display out to framebuffer")
