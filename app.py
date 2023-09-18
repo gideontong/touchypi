@@ -17,7 +17,7 @@ TARGET_RES = PI_RES
 SCALE = 1
 if not RUNNING_ON_PI:
     SCALE = EMULATOR_SCALE
-    RES = tuple(SCALE * value for value in RES)
+    RES = tuple(SCALE * value for value in PI_RES)
 
 if __name__ == "__main__":
     pygame.init()
@@ -29,7 +29,7 @@ if __name__ == "__main__":
 
         font = pygame.font.Font(None, 32)
         text_surface = font.render(str(i), True, (255, 255, 255))
-        buffer.blit(text_surface, (20, 20))
+        buffer.blit(text_surface, (20, 40))
 
         if not RUNNING_ON_PI:
             buffer = pygame.transform.scale_by(buffer, SCALE)
@@ -39,9 +39,9 @@ if __name__ == "__main__":
             if event.type == pygame.MOUSEBUTTONDOWN:
                 logger.debug(event)
 
-        status_bar_buffer = status_bar()
+        status_bar_buffer = status_bar(PI_RES)
         if not RUNNING_ON_PI:
-            status_bar_buffer = pygame.transform.scale_by(buffer, SCALE)
+            status_bar_buffer = pygame.transform.scale_by(status_bar_buffer, SCALE)
         lcd.blit(status_bar_buffer, (0, 0))
         pygame.display.update()
         if RUNNING_ON_PI:
