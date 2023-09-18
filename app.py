@@ -4,6 +4,8 @@ import pygame
 import pygame.image
 import pygame.transform
 
+pygame.init()
+
 from touchypi.const import EMULATOR_SCALE, PI_RES, RUNNING_ON_PI
 from touchypi.tools import logger
 from touchypi.ui.views import status_bar
@@ -20,7 +22,6 @@ if not RUNNING_ON_PI:
     RES = tuple(SCALE * value for value in PI_RES)
 
 if __name__ == "__main__":
-    pygame.init()
     lcd = pygame.display.set_mode(RES)
     for i in range(10000):
         events = pygame.event.get()
