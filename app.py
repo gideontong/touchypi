@@ -18,6 +18,7 @@ if RUNNING_ON_PI:
 TARGET_RES = PI_RES
 SCALE = 1
 if not RUNNING_ON_PI:
+    logger.info('Pi not detected')
     SCALE = EMULATOR_SCALE
     TARGET_RES = tuple(SCALE * value for value in PI_RES)
 
