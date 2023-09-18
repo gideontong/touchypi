@@ -19,10 +19,10 @@ TARGET_RES = PI_RES
 SCALE = 1
 if not RUNNING_ON_PI:
     SCALE = EMULATOR_SCALE
-    RES = tuple(SCALE * value for value in PI_RES)
+    TARGET_RES = tuple(SCALE * value for value in PI_RES)
 
 if __name__ == "__main__":
-    lcd = pygame.display.set_mode(RES)
+    lcd = pygame.display.set_mode(TARGET_RES)
     for i in range(10000):
         events = pygame.event.get()
         buffer = pygame.Surface(TARGET_RES)
